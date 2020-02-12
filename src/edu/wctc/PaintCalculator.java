@@ -121,6 +121,7 @@ public class PaintCalculator {
         int width = promptForDimension("width");
 
 
+        
         try {
             Mural mural = new Mural(length, width);
             roomList.add(mural);
