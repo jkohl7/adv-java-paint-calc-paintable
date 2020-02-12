@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class RoomReader implements Serializable {
-    public ArrayList<PaintCalculator.Paintable> readRoomFile(String fileName) throws IOException, ClassNotFoundException {
+    public ArrayList<Paintable> readRoomFile(String fileName) throws IOException, ClassNotFoundException {
 
         ArrayList rooms = new ArrayList();
 

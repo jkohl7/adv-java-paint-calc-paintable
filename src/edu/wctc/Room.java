@@ -3,7 +3,7 @@ package edu.wctc;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Room implements PaintCalculator.Paintable {
+public class Room implements Serializable, Paintable {
     static int roomCount;
     int roomNum = 1;
 

@@ -52,8 +52,7 @@ public class PaintCalculator {
                         printRooms();
                         break;
                     case 5:
-                        Mural m = new Mural();
-                        System.out.println("A Mural was created.");
+                       createMural();
                         break;
                     case 6:
                         System.out.println("Goodbye");
@@ -89,23 +88,6 @@ public class PaintCalculator {
         System.out.println();
     }
 
-    public interface Paintable
-
-    {
-
-        double PREMIUM_PAINT_COST_PER_GALLON = 65.99;
-
-        double STANDARD_PAINT_COST_PER_GALLON = 25.99;
-
-        // Cost to paint using premium paint?
-
-        public double getPremiumCost();
-
-        // Cost to paint using standard paint?
-
-        public double getStandardCost();
-
-    }
 
     private int promptForDimension(String name) {
         System.out.print("Enter the room's " + name + ": ");
@@ -131,5 +113,23 @@ public class PaintCalculator {
             System.out.println("Could not create room.");
         }
 
+
     }
+
+    private void createMural() {
+        int length = promptForDimension("length");
+        int width = promptForDimension("width");
+
+
+        try {
+            Mural mural = new Mural(length, width);
+            roomList.add(mural);
+
+            System.out.println("Mural successfully created");
+        } catch (BadWidthException | BadHeightException e) {
+            System.out.println("Could not create Mural.");
+        }
+
+    }
+
 }
